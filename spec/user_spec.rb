@@ -29,7 +29,6 @@ RSpec.describe User, type: :model do
   end
 
   it 'should have a most_recent_posts method that returns the 3 most recent posts' do
-    p @user
     post1 = Post.new(author: @user, title: 'Post Title 1', text: 'Post Text 1', commentscounter: 0, likescounter: 0)
     post1.save
     post2 = Post.new(author: @user, title: 'Post Title 2', text: 'Post Text 2', commentscounter: 0, likescounter: 0)
