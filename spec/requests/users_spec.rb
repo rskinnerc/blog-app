@@ -12,9 +12,26 @@ RSpec.describe 'Users routes', type: :request do
       expect(response).to render_template(:index)
     end
 
-    it 'contains a <h1>Here is a list of users.</h1> html tag' do
+    it 'renders a html containing a <h1>Here is a list of users.</h1> tag' do
       get '/users'
       expect(response.body).to include('<h1>Here is a list of users.</h1>')
+    end
+  end
+
+  context 'GET /users/:id' do
+    it 'returns a 200 response' do
+      get '/users/1'
+      expect(response).to have_http_status(200)
+    end
+
+    it 'renders the show view' do
+      get '/users/1'
+      expect(response).to render_template(:show)
+    end
+
+    it 'renders a html containing a <h1>Here are details of a given user</h1> tag' do
+      get '/users/1'
+      expect(response.body).to include('<h1>Here are details of a given user</h1>')
     end
   end
 end
