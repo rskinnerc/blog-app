@@ -1,15 +1,19 @@
-<div>
-  <h2><%= @post.title %></h2>
-  <p><%= @post.text %></p>
-  <p>Comments:
+<div class="rounded-md border border-cyan-900/10 p-2 mb-4">
+  <h2 class="font-semibold text-lg text-cyan-900"><%= @post.title %> <small class="text-base text-cyan-900/70">by <%= @post.author.name %></small></h2>
+  <p class="text-right text-sm text-cyan-800/50">Comments:
     <%= @post.commentscounter || 0 %>
     Likes:
     <%= @post.likescounter || 0 %></p>
-  <ul>
-    <% @comments.each do |comment| %>
-      <li>
-        <%= comment.author.name %><%= comment.text %>
-      </li>
-    <% end %>
-  </ul>
+  <p class="text-cyan-900 mt-4"><%= @post.text %></p>
+  <% unless !@post.commentscounter %>
+    <hr>
+    <h4 class="text-sm font-semibold text-cyan-700/70 mt-4"> Comments:</h4>
+    <ul class="my-3">
+      <% @post.comments.each do |comment| %>
+        <li class="text-cyan-800 text-sm my-2">
+          <%= comment.author.name %> says: <%= comment.text %>
+        </li>
+      <% end %>
+    </ul>
+  <% end %>
 </div>
