@@ -3,7 +3,7 @@
   <div class="w-4/5 px-2 pt-4 flex flex-col">
     <h2 class="text-2xl font-bold text-sky-600"><%= link_to @user.name, @user %></h2>
     <p class="text-sm text-right w-full font-bold text-emerald-500/60">Number of Posts:
-      <%= @user.posts.count %></p>
+      <%= @user.postscount %></p>
   </div>
 </div>
 <% @posts.each do |post| %>
@@ -27,4 +27,4 @@
     <% end %>
   </div>
 <% end %>
-<a href="#" class="border border-zinc-300 p-2 bg-cyan-900 text-cyan-100 rounded-md">Pagination</a>
+<a href="#" class="border border-zinc-300 p-2 bg-cyan-700 text-zinc-100 font-bold rounded-md">Pagination</a>
