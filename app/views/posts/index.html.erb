@@ -1,26 +1,30 @@
-<div>
-  <img src="<%= @user.photo %>"/>
-  <div>
-    <h2><%= link_to @user.name, @user %></h2>
-    <p>Number of Posts:
-      <%= @user.posts.count %></p>
+  <div class="flex my-3 rounded-md border border-cyan-900/50">
+    <img src="<%= @user.photo %>" class="w-1/5"/>
+    <div class="w-4/5 px-2 pt-4 flex flex-col">
+      <h2 class="text-lg font-bold text-cyan-700"><%= link_to @user.name, @user %></h2>
+      <p class="text-sm text-right w-full text-cyan-800/80">Number of Posts:
+        <%= @user.posts.count %></p>
+    </div>
   </div>
-</div>
 <% @posts.each do |post| %>
-  <div>
-    <h2><%= link_to post.title, url_for([@user, post]) %></h2>
-    <p><%= post.text %></p>
-    <p>Comments:
+  <div class="rounded-md border border-cyan-900/10 p-2 mb-4">
+    <h2 class="font-semibold text-cyan-900"><%= link_to post.title, url_for([@user, post]) %></h2>
+    <p class="text-cyan-900 text-md truncate"><%= post.text %></p>
+    <p class="text-right text-sm text-cyan-800/50">Comments:
       <%= post.commentscounter || 0 %>
       Likes:
       <%= post.likescounter || 0 %></p>
-    <ul>
-      <% post.comments.take(5).each do |comment| %>
-        <li>
-          <%= comment.author.name %><%= comment.text %>
-        </li>
-      <% end %>
-    </ul>
+    <% unless !post.commentscounter %>
+      <hr>
+      <h4 class="text-sm font-semibold text-cyan-700/70 mt-4">Most recent comments:</h4>
+      <ul class="my-3">
+        <% post.comments.take(5).each do |comment| %>
+          <li class="text-cyan-800 text-sm">
+            <%= comment.author.name %> says: <%= comment.text %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
   </div>
 <% end %>
 <a href="#">Pagination</a>
