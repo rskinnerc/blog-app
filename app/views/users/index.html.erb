@@ -1,1 +1,11 @@
-<h1>Here is a list of users.</h1>
+<h1 class="text-xl text-right text-cyan-700 font-bold">Users</h1>
+<% @users.each do |user| %>
+  <div class="flex my-3 rounded-md border border-zinc-300 bg-white overflow-y-hidden h-20">
+    <img src="<%= user.photo %>" class="w-1/5 rounded-l-md h-fit"/>
+    <div class="w-4/5 px-2 pt-4 flex flex-col">
+      <h2 class="text-lg font-bold text-sky-600"><%= link_to user.name, user %></h2>
+      <p class="text-sm text-right w-full text-emerald-500/60 font-bold">Number of Posts:
+        <%= user.postscount %></p>
+    </div>
+  </div>
+<% end %>
