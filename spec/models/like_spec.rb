@@ -12,8 +12,8 @@ RSpec.describe Comment, type: :model do
   end
 
   it 'should have a update_post_likes_counter method that increments the post\'s likes counter by 1' do
-    expect(@post.likescounter).to eq(0)
-    @like.update_post_likes_counter
     expect(@post.likescounter).to eq(1)
+    @like.update_post_likes_counter(:increment)
+    expect(@post.likescounter).to eq(2)
   end
 end
