@@ -6,6 +6,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @is_liked = @post.is_liked?(current_user)
     @comments = @post.comments
   end
 
