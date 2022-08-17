@@ -17,7 +17,7 @@ class Post < ApplicationRecord
     author.postscount.nil? ? author.update(postscount: 1) : author.update(postscount: author.postscount + 1)
   end
 
-  def is_liked?(user)
+  def liked?(user)
     likes.where(author: user).any?
   end
 end

@@ -5,6 +5,7 @@ class LikesController < ApplicationController
     @post.save
     redirect_to user_post_path(@post.author, @post)
   end
+
   def destroy
     @post = Post.find(params[:post_id])
     @post.likes.where(author: current_user).destroy_all
