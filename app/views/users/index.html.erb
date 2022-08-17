@@ -1,4 +1,5 @@
 <h1 class="text-xl text-right text-cyan-700 font-bold">Users</h1>
+ <%= link_to 'New Post', new_post_path, class: "border border-zinc-300 p-2 bg-cyan-700 text-zinc-100 font-bold rounded-md" %>
 <% @users.each do |user| %>
   <div class="flex my-3 rounded-md border border-zinc-300 bg-white overflow-y-hidden h-20">
     <img src="<%= user.photo %>" class="w-1/5 rounded-l-md h-fit"/>
