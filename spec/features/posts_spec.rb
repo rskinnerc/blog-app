@@ -43,4 +43,9 @@ RSpec.describe 'User listig path', type: :feature do
     expect(page).to have_content('Comment 1 for Post 1')
     expect(page).to have_content('Comment 2 for Post 1')
   end
+
+  it 'checks that I can see how many comments a post has.' do
+    visit user_posts_path(@user)
+    expect(page).to have_content('Comments: 2')
+  end
 end
