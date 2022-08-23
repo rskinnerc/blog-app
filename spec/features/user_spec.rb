@@ -32,4 +32,12 @@ RSpec.describe 'User listig path', type: :feature do
         visit user_path(@user)
         expect(page).to have_content('Lorem ipsum dolor sit amet')
       end
+
+      it 'should show the user\'s first 3 posts.' do
+        visit user_path(@user)
+        expect(page).to have_content('Post 5')
+        expect(page).to have_content('Post 4')
+        expect(page).to have_content('Post 3')
+        expect(page).to_not have_content('Post 2')
+      end
 end
