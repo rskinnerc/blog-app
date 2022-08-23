@@ -8,9 +8,9 @@ RSpec.describe 'User listig path', type: :feature do
     @post = Post.create(author: @user, title: 'Post 1', text: 'This is the post body', commentscounter: 0,
                         likescounter: 0)
     Comment.create(post: @post, author: @user,
-                   text: 'Ullamcorper a lacus vestibulum sed. Etiam sit amet nisl purus in.!')
+                   text: 'Comment 1 for Post 1')
     Comment.create(post: @post, author: @user,
-                   text: 'Arcu vitae elementum curabitur vitae nunc sed velit dignissim sodales')
+                   text: 'Comment 2 for Post 1')
   end
 
   it 'should show the user\'s profile picture.' do
@@ -36,5 +36,11 @@ RSpec.describe 'User listig path', type: :feature do
   it 'checks that I can see some of the post\'s body.' do
     visit user_posts_path(@user)
     expect(page).to have_content('This is the post body')
+  end
+
+  it 'checks that I can see the first comments on a post.' do
+    visit user_posts_path(@user)
+    expect(page).to have_content('Comment 1 for Post 1')
+    expect(page).to have_content('Comment 2 for Post 1')
   end
 end
