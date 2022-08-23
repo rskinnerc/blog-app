@@ -40,4 +40,9 @@ RSpec.describe 'User listig path', type: :feature do
         expect(page).to have_content('Post 3')
         expect(page).to_not have_content('Post 2')
       end
+
+      it 'should show a button that lets me view all of a user\'s posts.' do
+        visit user_path(@user)
+        expect(page).to have_content('See all posts')
+      end
 end
