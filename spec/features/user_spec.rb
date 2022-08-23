@@ -20,4 +20,8 @@ RSpec.describe 'User listig path', type: :feature do
         visit user_path(@user)
         expect(page.find('img')['src']).to have_content('https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')
       end
+      it 'should show the user\'s username.' do
+        visit user_path(@user)
+        expect(page).to have_content('Tom')
+      end
 end
