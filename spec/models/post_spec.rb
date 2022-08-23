@@ -56,6 +56,7 @@ RSpec.describe Post, type: :model do
     comment6.save
     comment7 = Comment.new(author: @author, text: 'Comment Text 7', post: @post)
     comment7.save
+    comment7.author
     expect(@post.most_recent_comments).to eq([comment7, comment6, comment5, comment4, comment3])
   end
 end

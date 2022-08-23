@@ -58,4 +58,10 @@ RSpec.describe 'User listig path', type: :feature do
     visit user_posts_path(@user)
     expect(page).to have_content('Pagination')
   end
+
+  it 'checks that When I click on a post, it redirects me to that post\'s show page.' do
+    visit user_posts_path(@user)
+    click_on 'Post 1'
+    expect(page).to have_current_path(user_post_path(@user, @post))
+  end
 end
