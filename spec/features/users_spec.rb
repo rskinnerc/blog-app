@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'User listig path', type: :feature do
+RSpec.describe 'User index page: ', type: :feature do
   before do
     @first_user = User.create(id: 1, name: 'Tom',
                               photo: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
