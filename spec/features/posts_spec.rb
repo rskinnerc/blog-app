@@ -53,4 +53,9 @@ RSpec.describe 'User listig path', type: :feature do
     visit user_posts_path(@user)
     expect(page).to have_content('Likes: 0')
   end
+
+  it 'checks that I can see a section for pagination if there are more posts than fit on the view.' do
+    visit user_posts_path(@user)
+    expect(page).to have_content('Pagination')
+  end
 end
