@@ -24,4 +24,8 @@ RSpec.describe 'User listig path', type: :feature do
         visit user_path(@user)
         expect(page).to have_content('Tom')
       end
+      it 'should show the user\'s number of posts.' do
+        visit user_path(@user)
+        expect(page).to have_content('Number of Posts: 5')
+      end
 end
