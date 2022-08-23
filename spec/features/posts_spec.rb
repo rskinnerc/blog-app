@@ -5,7 +5,7 @@ RSpec.describe 'User listig path', type: :feature do
     @user = User.create(id: 1, name: 'Tom',
                         photo: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
                         bio: 'Lorem ipsum dolor sit amet', postscount: 0)
-    @post = Post.create(author: @user, title: 'Post 1', text: 'This is the post title', commentscounter: 0,
+    @post = Post.create(author: @user, title: 'Post 1', text: 'This is the post body', commentscounter: 0,
                         likescounter: 0)
     Comment.create(post: @post, author: @user,
                    text: 'Ullamcorper a lacus vestibulum sed. Etiam sit amet nisl purus in.!')
@@ -30,6 +30,11 @@ RSpec.describe 'User listig path', type: :feature do
 
   it 'checks that I can see a post\'s title.' do
     visit user_posts_path(@user)
-    expect(page).to have_content('This is the post title')
+    expect(page).to have_content('Post 1')
+  end
+
+  it 'checks that I can see some of the post\'s body.' do
+    visit user_posts_path(@user)
+    expect(page).to have_content('This is the post body')
   end
 end
