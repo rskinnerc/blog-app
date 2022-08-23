@@ -45,4 +45,10 @@ RSpec.describe 'User listig path', type: :feature do
         visit user_path(@user)
         expect(page).to have_content('See all posts')
       end
+
+      it 'should redirects to the user\'s posts show page after clicking a post title.' do
+        visit user_path(@user)
+        click_on 'Post 5'
+        expect(page).to have_current_path(user_post_path(@user, @post5))
+      end
 end
