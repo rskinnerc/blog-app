@@ -3,11 +3,11 @@ require 'rails_helper'
 RSpec.describe 'User index page: ', type: :feature do
   before do
     @first_user = User.create(id: 1, name: 'Tom',
-                              photo: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                              bio: 'Lorem ipsum dolor sit amet', postscount: 0)
+      photo: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      bio: 'Lorem ipsum dolor sit amet', email: 'some@example.com', password: 'password')
     @second_user = User.create(id: 2, name: 'Lilly',
-                               photo: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                               bio: 'Lorem ipsum dolor sit amet', postscount: 0)
+      photo: 'https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      bio: 'Lorem ipsum dolor sit amet', email: 'lilly@example.com', password: 'password')
   end
 
   it 'should show the username of all existing users' do

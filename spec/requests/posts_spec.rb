@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Posts nested routes', type: :request do
   before do
     @user = User.create(id: 1, name: 'Tom',
-                        photo: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-                        bio: 'Lorem ipsum dolor sit amet', postscount: 0)
+      photo: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+      bio: 'Lorem ipsum dolor sit amet', email: 'some@example.com', password: 'password')
     @post = Post.create(id: 1, author: @user, title: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit',
                         text: 'Quis hendrerit dolor magna eget est lorem ipsum.', commentscounter: 0, likescounter: 0)
   end
