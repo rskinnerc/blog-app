@@ -9,7 +9,6 @@ class Ability
 
     return unless user&.role == 'admin'
 
-    can :destroy, Post
-    can :destroy, Comment
+    can :manag, :all
   end
 end
