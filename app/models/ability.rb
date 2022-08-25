@@ -7,7 +7,9 @@ class Ability
 
     if user && user.role == 'admin' 
       can :delete, Post
+      can :delete, Comment
     else
+      can :delete, Post, author: user
       can :delete, Post, author: user
     end
   end

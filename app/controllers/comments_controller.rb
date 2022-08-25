@@ -2,6 +2,14 @@ class CommentsController < ApplicationController
   def new
     @comment = Comment.new
   end
+  
+  def destroy
+     @comment = Comment.find(params[:id]) 
+     if can? :delete, @comment
+      @comment.destroy
+      redirect_to user_post_path(params[:user_id], params[:post_id])
+    end
+  end
 
   def create
     permitted = params.require(:comment).permit(:text)
