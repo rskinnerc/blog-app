@@ -10,7 +10,7 @@ class Ability
       can :delete, Comment
     else
       can :delete, Post, author: user
-      can :delete, Post, author: user
+      can :delete, Comment, author: user
     end
   end
 end

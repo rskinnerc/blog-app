@@ -16,6 +16,9 @@
       <% @comments.each do |comment| %>
         <li class="odd:text-cyan-800 even:text-cyan-600 text-sm my-2">
           <span class="font-semibold"><%= comment.author.name %></span> says: <%= comment.text %>
+          <% if can? :delete, comment %>
+           <%= button_to 'Delete Comment', user_post_comment_path(@post.author, @post, comment), method: :delete %>
+          <% end %>
         </li>
       <% end %>
     </ul>
