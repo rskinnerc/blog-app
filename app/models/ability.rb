@@ -9,6 +9,6 @@ class Ability
 
     return unless user&.role == 'admin'
 
-    can :manag, :all
+    can :manage, :all
   end
 end
