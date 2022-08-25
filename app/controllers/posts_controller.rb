@@ -25,4 +25,12 @@ class PostsController < ApplicationController
       render 'new'
     end
   end
+
+  def destroy
+    @post = Post.find(params[:id])
+    if can? :delete, @post
+      @post.destroy
+      redirect_to root_path
+    end
+  end
 end
