@@ -14,10 +14,10 @@
   <% unless @post.commentscounter == 0 %>
     <ul class="my-3">
       <% @comments.each do |comment| %>
-        <li class="odd:text-cyan-800 even:text-cyan-600 text-sm my-2">
+        <li class="odd:text-cyan-800 even:text-cyan-600 text-sm my-2 flex gap-2 items-center">
           <span class="font-semibold"><%= comment.author.name %></span> says: <%= comment.text %>
           <% if can? :delete, comment %>
-           <%= button_to '🗑️', user_post_comment_path(@post.author, @post, comment), method: :delete, class: 'text-white bg-white border-2 border-red-500 font-semibold px-2 py-1 text-sm my-2 rounded-md' %>
+           <%= button_to 'x', user_post_comment_path(@post.author, @post, comment), method: :delete, class: 'text-white bg-red-500 border-2 border-red-500 font-semibold text-xs my-2 rounded-full px-1' %>
           <% end %>
         </li>
       <% end %>
