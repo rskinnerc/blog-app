@@ -1,16 +1,16 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
-  
+
   def new
     @comment = Comment.new
   end
-  
+
   def destroy
-     @comment = Comment.find(params[:id]) 
-     if can? :delete, @comment
-      @comment.destroy
-      redirect_to user_post_path(params[:user_id], params[:post_id])
-    end
+    @comment = Comment.find(params[:id])
+    return unless can? :destroy, @comment
+
+    @comment.destroy
+    redirect_to user_post_path(params[:user_id], params[:post_id])
   end
 
   def create

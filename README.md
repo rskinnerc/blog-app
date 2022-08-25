@@ -2,7 +2,7 @@
 
 # RoR Blog App
 
-> A classic blog app built with Ruby on Rails. It is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts
+> A classic blog app built with Ruby on Rails. It is a fully functional website that will show the list of posts and empower readers to interact with them by adding comments and liking posts with authentication and authorzation features.
 
 ## Built With
 
@@ -11,6 +11,8 @@
 - Gems
 - Bundler
 - RSpec
+- CanCanCan for Authorization
+- Devise for Authentication
 - PostgreSQL
 
 ## Getting Started
@@ -40,6 +42,11 @@ Install the dependencies with `bundle install`
 - GitHub: [@rskinnerc](https://github.com/rskinnerc)
 - Twitter: [@XSkinner](https://twitter.com/XSkinner)
 - LinkedIn: [Ronald Skinner Cardenas](https://www.linkedin.com/in/rskinnerc/)
+
+👤 **Abdul Hadi Jafari**
+
+- GitHub: [@Hadi111jafari](https://github.com/rskinnerc)
+- LinkedIn: [Abdul Hadi Jafari](https://www.linkedin.com/in/abdul-hadi-jafari/)
 
 
 ## 🤝 Contributing

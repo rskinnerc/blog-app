@@ -28,9 +28,9 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.find(params[:id])
-    if can? :delete, @post
-      @post.destroy
-      redirect_to root_path
-    end
+    return unless can? :destroy, @post
+
+    @post.destroy
+    redirect_to root_path
   end
 end
