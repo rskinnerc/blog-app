@@ -2,21 +2,22 @@ require 'rails_helper'
 
 RSpec.describe User, type: :model do
   before do
-    @user = User.new(name: 'Ronald', photo: 'https://unsplash.com/photos/F_-0BxGuVvo', bio: 'Full Stack Dev.',
-                     postscount: 0)
+    @user = User.new(id: 1, name: 'Tom',
+                     photo: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                     bio: 'Lorem ipsum dolor sit amet', email: 'some@example.com', password: 'password')
     @user.save
   end
 
   it 'should have a name' do
-    expect(@user.name).to eq('Ronald')
+    expect(@user.name).to eq('Tom')
   end
 
   it 'should have a photo' do
-    expect(@user.photo).to eq('https://unsplash.com/photos/F_-0BxGuVvo')
+    expect(@user.photo).to eq('https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1')
   end
 
   it 'should have a bio' do
-    expect(@user.bio).to eq('Full Stack Dev.')
+    expect(@user.bio).to eq('Lorem ipsum dolor sit amet')
   end
 
   it 'should not be valid without a name' do
