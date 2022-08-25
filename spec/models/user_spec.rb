@@ -3,8 +3,8 @@ require 'rails_helper'
 RSpec.describe User, type: :model do
   before do
     @user = User.new(id: 1, name: 'Tom',
-      photo: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
-      bio: 'Lorem ipsum dolor sit amet', email: 'some@example.com', password: 'password')
+                     photo: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+                     bio: 'Lorem ipsum dolor sit amet', email: 'some@example.com', password: 'password')
     @user.save
   end
 
