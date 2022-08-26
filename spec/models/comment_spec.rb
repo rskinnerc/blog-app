@@ -14,7 +14,7 @@ RSpec.describe Comment, type: :model do
 
   it 'should have a update_comments_counter method that increments the post\'s comment counter by 1' do
     expect(@post.commentscounter).to eq(1)
-    @comment.update_comments_counter
+    @comment.update_comments_counter(:increment)
     expect(@post.commentscounter).to eq(2)
   end
 end
