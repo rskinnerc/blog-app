@@ -13,6 +13,6 @@ class Api::CommentsController < ApplicationController
     @comment = Comment.new(text: permitted[:text], author_id: current_user.id, post_id: params[:post_id])
     @comment.save
 
-    render json: {status: 200, message: 'Comment created successfully.'}
+    render json: { status: 200, message: 'Comment created successfully.' }
   end
 end
