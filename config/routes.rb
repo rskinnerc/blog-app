@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
   devise_for :users, controllers: { sessions: 'sessions' }, path: '/', path_names: { sign_in: 'login'}
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
